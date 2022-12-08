@@ -4,6 +4,17 @@ module.exports = ({ env }) => ({
       jwtSecret: env('JWT_SECRET'),
       },
     },
+    graphql: {
+      enabled: true,
+      config: {
+        playgroundAlways: true,
+        //defaultLimit: 10,
+        //maxLimit: 20,
+        apolloServer: {
+          tracing: true,
+        },
+      }
+    },
     upload: {
       config: {
         provider: 'cloudinary',
